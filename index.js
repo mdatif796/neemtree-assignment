@@ -1,6 +1,7 @@
 require('dotenv').config();
 const bodyParser = require('body-parser');
 const express = require('express');
+const fs = require('fs');
 const nodeSassMiddleware = require('node-sass-middleware');
 const path = require('path');
 const XLSX = require('xlsx');
@@ -67,9 +68,13 @@ app.post('/uploadfile',upload.single('uploadfile'), async function(req, res){
                 });
             }
         }
-        return res.send('<h1>Successfully added to the mongoDB !!</h1>');
+        fs.unlinkSync(req.file.path);
+        return res.render('aftersubmit');
     } catch (error) {
-        
+        console.log(error);
+        return res.status(500).json({
+            error: error
+        });
     }
 });
 

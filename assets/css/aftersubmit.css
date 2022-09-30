@@ -25,26 +25,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     border: 0.6px dotted gray; }
-    body #body-container #form-container form {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around; }
-      body #body-container #form-container form #uploadfile {
-        display: none; }
-      body #body-container #form-container form #submit-btn {
-        width: 70px;
-        padding: 5px 0;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        background-color: #63cf63;
-        color: white;
-        display: none; }
-    body #body-container #form-container img {
-      width: 100px;
-      height: 60px;
-      cursor: pointer; }
+    body #body-container #form-container h1 {
+      margin-top: 3px;
+      color: #63cf63; }
